@@ -1,0 +1,111 @@
+<?xml version="1.0" ?>
+<robot name="robotic_arm" xmlns:xacro="http://www.ros.org/wiki/xacro" >
+
+<xacro:property name="body_color" value="Gazebo/Silver" />
+
+<gazebo>
+  <plugin name="control" filename="libgazebo_ros_control.so"/>
+</gazebo>
+<gazebo>
+  <plugin name="gazebo_grasp_fix" filename="libgazebo_grasp_fix.so">
+    <arm>
+      <arm_name>arm</arm_name>
+      <palm_link>Gripper_base_v1_1</palm_link>
+      <gripper_link>gear2_v1_1</gripper_link>
+      <gripper_link>gear1_v1_1</gripper_link>
+    </arm>
+    <forces_angle_tolerance>100</forces_angle_tolerance>
+    <update_rate>4</update_rate>
+    <grip_count_threshold>4</grip_count_threshold>
+    <max_grip_count>8</max_grip_count>
+    <release_tolerance>0.005</release_tolerance>
+    <disable_collisions_on_attach>false</disable_collisions_on_attach>
+    <contact_topic>__default_topic__</contact_topic>
+  </plugin>
+</gazebo>
+
+<!-- <gazebo>
+  <gripper name="Gripper_base_v1_1">
+    <grasp_check>
+        <attach_steps>5</attach_steps>
+        <detach_steps>10</detach_steps>
+        <min_contact_count>1</min_contact_count>
+    </grasp_check>
+    <gripper_link>gear2_v1_1</gripper_link>
+    <gripper_link>gear1_v1_1</gripper_link>
+    <palm_link>Gripper_base_v1_1</palm_link>
+  </gripper>
+</gazebo> -->
+ 
+<gazebo reference="base_link">
+  <material>${body_color}</material>
+  <mu1>0.2</mu1>
+  <mu2>0.2</mu2>
+  <selfCollide>true</selfCollide>
+  <gravity>true</gravity>
+</gazebo>
+
+<gazebo reference="WAIST_1">
+  <material>${body_color}</material>
+  <mu1>0.2</mu1>
+  <mu2>0.2</mu2>
+  <selfCollide>true</selfCollide>
+</gazebo>
+
+<gazebo reference="ARM_1_1">
+  <material>${body_color}</material>
+  <mu1>0.2</mu1>
+  <mu2>0.2</mu2>
+  <selfCollide>true</selfCollide>
+</gazebo>
+
+<gazebo reference="ARM_2_1">
+  <material>${body_color}</material>
+  <mu1>0.2</mu1>
+  <mu2>0.2</mu2>
+  <selfCollide>true</selfCollide>
+</gazebo>
+
+<gazebo reference="ARM_3_1">
+  <material>${body_color}</material>
+  <mu1>0.2</mu1>
+  <mu2>0.2</mu2>
+  <selfCollide>true</selfCollide>
+</gazebo>
+
+<gazebo reference="Gripper_base_v1_1">
+  <material>${body_color}</material>
+  <mu1>0.2</mu1>
+  <mu2>0.2</mu2>
+  <selfCollide>true</selfCollide>
+</gazebo>
+
+<gazebo reference="gear2_v1_1">
+  <material>${body_color}</material>
+  <mu1>0.2</mu1>
+  <mu2>0.2</mu2>
+  <selfCollide>true</selfCollide>
+</gazebo>
+
+<gazebo reference="gear1_v1_1">
+  <material>${body_color}</material>
+  <mu1>0.2</mu1>
+  <mu2>0.2</mu2>
+  <selfCollide>true</selfCollide>
+</gazebo>
+
+<gazebo reference="Gripper_1_v1_1">
+  <material>${body_color}</material>
+  <mu1>0.2</mu1>
+  <mu2>0.2</mu2>
+  <selfCollide>true</selfCollide>
+</gazebo>
+
+<gazebo reference="Gripper_1_v1__1__1">
+  <material>${body_color}</material>
+  <mu1>0.2</mu1>
+  <mu2>0.2</mu2>
+  <selfCollide>true</selfCollide>
+</gazebo>
+
+</robot>
